@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="information" label="Information" language="en" table="x_68723_picwik_app_picwik_gallery">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>information</element>
+            <help/>
+            <hint/>
+            <label>Information</label>
+            <language>en</language>
+            <name>x_68723_picwik_app_picwik_gallery</name>
+            <plural>Informations</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-03-20 06:43:25</sys_created_on>
+            <sys_id>67dd72e9db1033001b2853184b96198b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Information</sys_name>
+            <sys_package display_value="Picwik App" source="x_68723_picwik_app">d4f9b6a5db1033001b2853184b961976</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Picwik App">d4f9b6a5db1033001b2853184b961976</sys_scope>
+            <sys_update_name>sys_documentation_x_68723_picwik_app_picwik_gallery_information_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-03-20 06:43:25</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

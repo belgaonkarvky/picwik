@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Picwik Gallery" max_length="40" name="x_68723_picwik_app_picwik_gallery" type="collection">
+        <element label="Caption" max_length="40" name="caption" type="string"/>
+        <element label="Description" max_length="2000" name="description" type="string"/>
+        <element label="Image" max_length="40" name="image" type="user_image"/>
+        <element label="Information" max_length="40" name="information" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" display="true" label="Number" max_length="40" name="number" type="string"/>
+    </element>
+</database>

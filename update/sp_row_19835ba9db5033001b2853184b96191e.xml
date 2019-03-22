@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row">
+    <sp_row action="INSERT_OR_UPDATE">
+        <class_name/>
+        <order>1</order>
+        <sp_column display_value="1">54839f29db5033001b2853184b9619e9</sp_column>
+        <sp_container/>
+        <sys_class_name>sp_row</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-20 08:18:02</sys_created_on>
+        <sys_id>19835ba9db5033001b2853184b96191e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Picwik App" source="x_68723_picwik_app">d4f9b6a5db1033001b2853184b961976</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Picwik App">d4f9b6a5db1033001b2853184b961976</sys_scope>
+        <sys_update_name>sp_row_19835ba9db5033001b2853184b96191e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-20 08:18:02</sys_updated_on>
+    </sp_row>
+</record_update>
