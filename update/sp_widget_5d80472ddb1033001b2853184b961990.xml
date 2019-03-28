@@ -2,21 +2,22 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[function($scope,$rootScope) {
-		/* widget controller */
-		var c = this;
-		
-		$rootScope.$on('selectRecord', function(event,data) { 
-			console.log('Listener caught NoteID: ' + $rootScope.someID);
-			
-			c.server.get({
-				action: 'getImage',
-				someID: $rootScope.someID
-			}).then(function(r){
-				c.data.caption = r.data.caption;
-			})
-			
-		});
-	}]]></client_script>
+	/* widget controller */
+	var c = this;
+
+	$rootScope.$on('selectRecord', function(event,data) { 
+		console.log('Listener caught NoteID: ' + $rootScope.someID);
+		c.server.get({
+			action: 'getImage',
+			omeID: $rootScope.someID
+		}).then(function(r){
+			console.log('Listener caught r: ' +  r.data.someVal.caption);
+			console.log('Listener caught r: ' +  r.data.image);
+			c.data.caption = r.data.someVal.caption;
+			c.data.image = r.data.image;
+		})
+	});
+}]]></client_script>
         <controller_as>c</controller_as>
         <css/>
         <data_table>sp_instance</data_table>
@@ -35,13 +36,15 @@
         <script><![CDATA[(function() {
 	/* populate the 'data' object */
 	/* e.g., data.table = $sp.getValue('table'); */
-	if(input && input.someID){
+
+	if(input && input.omeID){
+	// = [];
 		var galRec = new GlideRecord('x_68723_picwik_app_picwik_gallery');
-		if (galRec.get(input.someID)) {
-			if (input.action == 'getNote') {
-				data.galRecords = {};
-				$sp.getRecordValues(data.galRecords, galRec, "caption,image,sys_id");
-			}
+		galRec.get(input.omeID);
+		if (input.action == 'getImage') {
+			data.someVal = {};
+			$sp.getRecordValues(data.someVal, galRec, "caption,sys_id");
+			data.image = galRec.getDisplayValue('image');
 		}
 	}
 })();]]></script>
@@ -50,22 +53,24 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-03-20 06:55:01</sys_created_on>
         <sys_id>5d80472ddb1033001b2853184b961990</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>54</sys_mod_count>
         <sys_name>Selected Record Image</sys_name>
         <sys_package display_value="Picwik App" source="x_68723_picwik_app">d4f9b6a5db1033001b2853184b961976</sys_package>
         <sys_policy/>
         <sys_scope display_value="Picwik App">d4f9b6a5db1033001b2853184b961976</sys_scope>
         <sys_update_name>sp_widget_5d80472ddb1033001b2853184b961990</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-03-21 11:05:30</sys_updated_on>
-        <template><![CDATA[<div><p>
+        <sys_updated_on>2019-03-22 11:45:34</sys_updated_on>
+        <template><![CDATA[<div class="col-md-12 dp-dashboard-carousel hidden-xs ng-isolate-scope carousel-open">
+  
+</div>
+<div>
   Some Image will show up
-  </p>
-<!-- your widget template -->
-  <p  ng-model="c.data.caption">{{c.data.caption}}
-    
-  </p>
-   <!--img ng-src="{{::c.data.caption}}" -->
+ <p ng-model="c.data.caption">{{c.data.caption}}</p>
+  <img ng-src="{{c.data.image}}" width="100" height="100"/>
+</div>
+<div>
+  
 </div>]]></template>
     </sp_widget>
 </record_update>
